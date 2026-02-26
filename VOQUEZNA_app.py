@@ -18,9 +18,9 @@ st.markdown("""
 <style>
     [data-testid="stSidebar"] { display: none; }
     #MainMenu {visibility: hidden;}
-    header {visibility: hidden;}
+    header {visibility: hidden; height: 0 !important; padding: 0 !important; margin: 0 !important; min-height: 0 !important;}
     footer {visibility: hidden;}
-    .block-container { padding-left: 1rem !important; padding-right: 1rem !important; max-width: 100% !important; font-size: 1.15rem !important; }
+    .block-container { padding-left: 1rem !important; padding-right: 1rem !important; padding-top: 1rem !important; max-width: 100% !important; font-size: 1.15rem !important; }
     .main-header { font-size: 2.5rem; font-weight: 700; color: #0057A8; text-align: center; padding: 1rem 0; background: linear-gradient(135deg, #0057A8 0%, #0097A9 50%, #E3177A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .sub-header { font-size: 1.35rem; color: #475569; text-align: center; margin-bottom: 1rem; }
     .info-box { background-color: #edf4fc; padding: 1.2rem; border-radius: 10px; border-left: 5px solid #0057A8; margin: 0.8rem 0; word-wrap: break-word; overflow-wrap: break-word; font-size: 1.15rem; }
@@ -203,7 +203,7 @@ if not os.path.exists(image_path):
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
     if os.path.exists(image_path):
-        st.image(image_path, use_column_width=True)
+        st.image(image_path, use_container_width=True)
     else:
         st.warning("⚠️ Drug box image not found. Please place VOQUEZNA.png in the app folder.")
 
