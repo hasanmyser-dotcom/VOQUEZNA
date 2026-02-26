@@ -110,6 +110,88 @@ st.markdown("""
         .stTabs [data-baseweb="tab"] { background-color: #1e293b; color: #cbd5e1; }
         .stTabs [aria-selected="true"] { background-color: #2563eb; color: white; }
     }
+
+    /* ===== EXPANDER / ACCORDION STYLES ===== */
+    .streamlit-expanderHeader {
+        background: linear-gradient(135deg, #2563eb, #3b82f6) !important;
+        color: white !important;
+        border-radius: 10px !important;
+        padding: 0.8rem 1.2rem !important;
+        font-size: 1.05rem !important;
+        font-weight: 600 !important;
+        transition: all 0.3s ease !important;
+        border: none !important;
+    }
+    .streamlit-expanderHeader:hover {
+        background: linear-gradient(135deg, #1d4ed8, #2563eb) !important;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+        transform: translateY(-1px) !important;
+    }
+    .streamlit-expanderHeader p { color: white !important; margin: 0 !important; }
+    .streamlit-expanderHeader svg { fill: white !important; }
+    .streamlit-expanderContent {
+        border: 1px solid #e2e8f0 !important;
+        border-top: none !important;
+        border-radius: 0 0 10px 10px !important;
+        padding: 1rem !important;
+    }
+    /* New Streamlit versions use data-testid */
+    [data-testid="stExpander"] {
+        border: none !important;
+        border-radius: 10px !important;
+        margin-bottom: 0.8rem !important;
+        overflow: hidden !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
+    }
+    [data-testid="stExpander"] details {
+        border: none !important;
+    }
+    [data-testid="stExpander"] summary {
+        background: linear-gradient(135deg, #2563eb, #3b82f6) !important;
+        color: white !important;
+        border-radius: 10px !important;
+        padding: 0.8rem 1.2rem !important;
+        font-size: 1.05rem !important;
+        font-weight: 600 !important;
+        transition: all 0.3s ease !important;
+    }
+    [data-testid="stExpander"] summary:hover {
+        background: linear-gradient(135deg, #1d4ed8, #2563eb) !important;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+    }
+    [data-testid="stExpander"] summary span { color: white !important; }
+    [data-testid="stExpander"] summary svg { fill: white !important; color: white !important; }
+    [data-testid="stExpander"] details[open] summary {
+        border-radius: 10px 10px 0 0 !important;
+    }
+    [data-testid="stExpander"] [data-testid="stExpanderDetails"] {
+        border: 2px solid #3b82f6 !important;
+        border-top: none !important;
+        border-radius: 0 0 10px 10px !important;
+        padding: 1rem !important;
+    }
+    @media (max-width: 768px) {
+        .streamlit-expanderHeader, [data-testid="stExpander"] summary {
+            font-size: 0.9rem !important;
+            padding: 0.6rem 0.8rem !important;
+        }
+    }
+    @media (prefers-color-scheme: dark) {
+        [data-testid="stExpander"] {
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3) !important;
+        }
+        [data-testid="stExpander"] summary {
+            background: linear-gradient(135deg, #1e40af, #2563eb) !important;
+        }
+        [data-testid="stExpander"] summary:hover {
+            background: linear-gradient(135deg, #1e3a8a, #1d4ed8) !important;
+        }
+        [data-testid="stExpander"] [data-testid="stExpanderDetails"],
+        .streamlit-expanderContent {
+            border-color: #334155 !important;
+            background-color: #0f172a !important;
+        }
+    }
 </style>
 """, unsafe_allow_html=True)
 
