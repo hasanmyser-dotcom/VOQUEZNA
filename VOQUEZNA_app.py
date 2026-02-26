@@ -20,13 +20,13 @@ st.markdown("""
     #MainMenu {visibility: hidden;}
     header {visibility: hidden;}
     footer {visibility: hidden;}
-    .block-container { padding-left: 1rem !important; padding-right: 1rem !important; max-width: 100% !important; }
+    .block-container { padding-left: 1rem !important; padding-right: 1rem !important; max-width: 100% !important; font-size: 1.05rem !important; }
     .main-header { font-size: 2.5rem; font-weight: 700; color: #1e3a8a; text-align: center; padding: 1rem 0; background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .sub-header { font-size: 1.2rem; color: #475569; text-align: center; margin-bottom: 1rem; }
-    .info-box { background-color: #f0f9ff; padding: 1.2rem; border-radius: 10px; border-left: 5px solid #3b82f6; margin: 0.8rem 0; word-wrap: break-word; overflow-wrap: break-word; }
-    .warning-box { background-color: #fef2f2; padding: 1.2rem; border-radius: 10px; border-left: 5px solid #ef4444; margin: 0.8rem 0; word-wrap: break-word; overflow-wrap: break-word; }
-    .success-box { background-color: #f0fdf4; padding: 1.2rem; border-radius: 10px; border-left: 5px solid #22c55e; margin: 0.8rem 0; word-wrap: break-word; overflow-wrap: break-word; }
-    .critical-box { background-color: #fdf2f8; padding: 1.2rem; border-radius: 10px; border-left: 5px solid #dc2626; margin: 0.8rem 0; border: 2px solid #dc2626; word-wrap: break-word; overflow-wrap: break-word; }
+    .info-box { background-color: #f0f9ff; padding: 1.2rem; border-radius: 10px; border-left: 5px solid #3b82f6; margin: 0.8rem 0; word-wrap: break-word; overflow-wrap: break-word; font-size: 1.05rem; }
+    .warning-box { background-color: #fef2f2; padding: 1.2rem; border-radius: 10px; border-left: 5px solid #ef4444; margin: 0.8rem 0; word-wrap: break-word; overflow-wrap: break-word; font-size: 1.05rem; }
+    .success-box { background-color: #f0fdf4; padding: 1.2rem; border-radius: 10px; border-left: 5px solid #22c55e; margin: 0.8rem 0; word-wrap: break-word; overflow-wrap: break-word; font-size: 1.05rem; }
+    .critical-box { background-color: #fdf2f8; padding: 1.2rem; border-radius: 10px; border-left: 5px solid #dc2626; margin: 0.8rem 0; border: 2px solid #dc2626; word-wrap: break-word; overflow-wrap: break-word; font-size: 1.05rem; }
     .metric-card { background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
     .stTabs [data-baseweb="tab-list"] { gap: 4px; flex-wrap: wrap !important; justify-content: center; }
     .stTabs [data-baseweb="tab"] { height: 45px; padding: 0 12px; background-color: #f1f5f9; border-radius: 8px; font-size: 0.9rem; white-space: nowrap; flex: 0 1 auto; margin: 2px; }
@@ -56,8 +56,8 @@ st.markdown("""
     .reference-item a:hover { color: #1d4ed8; text-decoration: underline; }
     .card-item { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem; margin: 0.6rem 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: box-shadow 0.2s; }
     .card-item:hover { box-shadow: 0 3px 8px rgba(0,0,0,0.12); }
-    .card-item h4 { margin: 0 0 0.5rem 0; color: #1e3a8a; font-size: 1.05rem; }
-    .card-item .card-detail { font-size: 0.92rem; color: #334155; margin: 0.25rem 0; line-height: 1.5; }
+    .card-item h4 { margin: 0 0 0.5rem 0; color: #1e3a8a; font-size: 1.15rem; }
+    .card-item .card-detail { font-size: 1.02rem; color: #334155; margin: 0.25rem 0; line-height: 1.6; }
     .card-item .card-detail strong { color: #475569; }
     .card-item .card-badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.82rem; font-weight: 600; margin-right: 4px; }
     .card-badge-red { background: #fee2e2; color: #dc2626; }
@@ -834,44 +834,54 @@ with tabs[7]:
 with tabs[8]:
     st.header("📚 References and Sources")
 
-    with st.expander("📋 Primary Regulatory Sources", expanded=True):
-        st.markdown("""
-        **1. FDA Prescribing Information — VOQUEZNA (Vonoprazan)**
-        Full prescribing information including indications, dosage, warnings, and pharmacokinetics.
-        🔗 [https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/215587s000lbl.pdf](https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/215587s000lbl.pdf)
-        """)
-        st.markdown("---")
-        st.markdown("""
-        **2. EMA Assessment — Vonoprazan**
-        European Medicines Agency scientific assessment and product information.
-        🔗 [https://www.ema.europa.eu/en/medicines](https://www.ema.europa.eu/en/medicines)
-        """)
+    st.markdown("### 📋 Primary Regulatory Sources")
+    st.write("")
 
-    with st.expander("🔬 Clinical Studies & Data Accuracy"):
-        st.markdown("""
-        **3. Vonoprazan Clinical Trials for Erosive Esophagitis**
-        Phase 3 clinical trials demonstrating non-inferiority and superiority of vonoprazan vs lansoprazole in healing of erosive esophagitis.
-        🔗 [https://clinicaltrials.gov/](https://clinicaltrials.gov/)
-        """)
-        st.markdown("---")
-        st.markdown("""
-        **4. Drugs.com — Vonoprazan Drug Interactions**
-        Comprehensive drug interaction database for Vonoprazan.
-        🔗 [https://www.drugs.com/drug-interactions/vonoprazan.html](https://www.drugs.com/drug-interactions/vonoprazan.html)
-        """)
-        st.markdown("---")
-        st.info("""
-        **📊 Data Accuracy Statement**
+    st.markdown("""
+    **1. FDA Prescribing Information — VOQUEZNA (Vonoprazan)**
+    Full prescribing information including indications, dosage, warnings, and pharmacokinetics.
+    🔗 [https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/215587s000lbl.pdf](https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/215587s000lbl.pdf)
+    """)
 
-        All information in this application has been verified against:
-        - FDA Prescribing Information
-        - Peer-reviewed clinical studies and guidelines
+    st.markdown("---")
 
-        **📅 Last Updated:** February 2026
-        **📌 Version:** 1.0.0
-        **✅ Verification Status:** All references checked and validated
-        **🔬 Methodology:** Pre-Pharmacode V2.5 Standard with Triple-Verification
-        """)
+    st.markdown("""
+    **2. EMA Assessment — Vonoprazan**
+    European Medicines Agency scientific assessment and product information.
+    🔗 [https://www.ema.europa.eu/en/medicines](https://www.ema.europa.eu/en/medicines)
+    """)
+
+    st.markdown("---")
+    st.markdown("### 🔬 Key Clinical Studies & Reviews")
+    st.write("")
+
+    st.markdown("""
+    **3. Vonoprazan Clinical Trials for Erosive Esophagitis**
+    Phase 3 clinical trials demonstrating non-inferiority and superiority of vonoprazan vs lansoprazole in healing of erosive esophagitis.
+    🔗 [https://clinicaltrials.gov/](https://clinicaltrials.gov/)
+    """)
+
+    st.markdown("---")
+
+    st.markdown("""
+    **4. Drugs.com — Vonoprazan Drug Interactions**
+    Comprehensive drug interaction database for Vonoprazan.
+    🔗 [https://www.drugs.com/drug-interactions/vonoprazan.html](https://www.drugs.com/drug-interactions/vonoprazan.html)
+    """)
+
+    st.markdown("---")
+    st.info("""
+    **📊 Data Accuracy Statement**
+
+    All information in this application has been verified against:
+    - FDA Prescribing Information
+    - Peer-reviewed clinical studies and guidelines
+
+    **📅 Last Updated:** February 2026
+    **📌 Version:** 1.0.0
+    **✅ Verification Status:** All references checked and validated
+    **🔬 Methodology:** Pre-Pharmacode V2.5 Standard with Triple-Verification
+    """)
 
 # ==================== TAB 10: PHATHOM PHARMACEUTICALS ====================
 with tabs[9]:
