@@ -232,6 +232,18 @@ tabs = st.tabs([
 with tabs[0]:
     st.header("📖 Overview of VOQUEZNA (Vonoprazan)")
 
+    st.markdown("### ℹ️ Basic Information")
+    st.markdown("""
+    <div class="info-box">
+    <p class="card-detail">🧪 <strong>Generic Name:</strong> Vonoprazan</p>
+    <p class="card-detail">🏷️ <strong>Brand Name:</strong> VOQUEZNA®</p>
+    <p class="card-detail">🏭 <strong>Manufacturer:</strong> Phathom Pharmaceuticals</p>
+    <p class="card-detail">💊 <strong>Drug Class:</strong> Potassium-Competitive Acid Blocker (P-CAB)</p>
+    <p class="card-detail">📅 <strong>FDA Approval:</strong> November 2023</p>
+    <p class="card-detail">📋 <strong>REMS Program:</strong> None required</p>
+    </div>
+    """, unsafe_allow_html=True)
+
     st.markdown("### 🎯 Indications & Available Strengths")
     col1, col2 = st.columns(2)
     with col1:
@@ -276,17 +288,7 @@ with tabs[0]:
         </div>
         """, unsafe_allow_html=True)
 
-    with st.expander("ℹ️ Basic Information"):
-        st.markdown("""
-        <div class="info-box">
-        <p class="card-detail">🧪 <strong>Generic Name:</strong> Vonoprazan</p>
-        <p class="card-detail">🏷️ <strong>Brand Name:</strong> VOQUEZNA®</p>
-        <p class="card-detail">🏭 <strong>Manufacturer:</strong> Phathom Pharmaceuticals</p>
-        <p class="card-detail">💊 <strong>Drug Class:</strong> Potassium-Competitive Acid Blocker (P-CAB)</p>
-        <p class="card-detail">📅 <strong>FDA Approval:</strong> November 2023</p>
-        <p class="card-detail">📋 <strong>REMS Program:</strong> None required</p>
-        </div>
-        """, unsafe_allow_html=True)
+
 
 # ==================== TAB 2: MECHANISM ====================
 with tabs[1]:
@@ -840,17 +842,17 @@ with tabs[8]:
     st.write("")
 
     st.markdown("""
-    **1. FDA Prescribing Information — VOQUEZNA (Vonoprazan)**
-    Full prescribing information including indications, dosage, warnings, and pharmacokinetics.
-    🔗 [https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/215587s000lbl.pdf](https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/215587s000lbl.pdf)
+    **1. U.S. Food and Drug Administration (FDA) - Official Label**
+    This is the primary source used for indications, dosing, contraindications (like the Rilpivirine interaction), and the core drug interactions profile.
+    🔗 [https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/215151s000lbl.pdf](https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/215151s000lbl.pdf)
     """)
 
     st.markdown("---")
 
     st.markdown("""
-    **2. EMA Assessment — Vonoprazan**
-    European Medicines Agency scientific assessment and product information.
-    🔗 [https://www.ema.europa.eu/en/medicines](https://www.ema.europa.eu/en/medicines)
+    **2. National Library of Medicine (DailyMed - NIH)**
+    This source was used to double-check continuous dosage updates, exact percentages of adverse effects, and detailed pharmacokinetics.
+    🔗 [https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0cc52ac5-77ec-4d66-a770-762a1a960914](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0cc52ac5-77ec-4d66-a770-762a1a960914)
     """)
 
     st.markdown("---")
@@ -858,17 +860,25 @@ with tabs[8]:
     st.write("")
 
     st.markdown("""
-    **3. Vonoprazan Clinical Trials for Erosive Esophagitis**
-    Phase 3 clinical trials demonstrating non-inferiority and superiority of vonoprazan vs lansoprazole in healing of erosive esophagitis.
-    🔗 [https://clinicaltrials.gov/](https://clinicaltrials.gov/)
+    **3. Official Clinical Trials Registry (ClinicalTrials.gov)**
+    This was used to extract clinical efficacy data for the treatment of Erosive Esophagitis and to verify its rapid onset of action compared to PPIs (based on the PHALCON-EE study).
+    🔗 [https://clinicaltrials.gov/study/NCT02388724](https://clinicaltrials.gov/study/NCT02388724)
     """)
 
     st.markdown("---")
 
     st.markdown("""
-    **4. Drugs.com — Vonoprazan Drug Interactions**
-    Comprehensive drug interaction database for Vonoprazan.
-    🔗 [https://www.drugs.com/drug-interactions/vonoprazan.html](https://www.drugs.com/drug-interactions/vonoprazan.html)
+    **4. Medical Research Database (PubMed Central - PMC)**
+    Peer-reviewed research from this database was used to document the drug's role in H. pylori eradication and to scientifically prove its competitive advantage (its lack of reliance on the CYP2C19 enzyme).
+    🔗 [https://pmc.ncbi.nlm.nih.gov/articles/PMC11090951/](https://pmc.ncbi.nlm.nih.gov/articles/PMC11090951/)
+    """)
+
+    st.markdown("---")
+
+    st.markdown("""
+    **5. PubMed - Clinical Studies (Nov 2024)**
+    This recent subgroup analysis was used to verify the influence of patient characteristics on the efficacy of Vonoprazan.
+    🔗 [https://pubmed.ncbi.nlm.nih.gov/39554983/](https://pubmed.ncbi.nlm.nih.gov/39554983/)
     """)
 
     st.markdown("---")
@@ -876,8 +886,10 @@ with tabs[8]:
     **📊 Data Accuracy Statement**
 
     All information in this application has been verified against:
-    - FDA Prescribing Information
-    - Peer-reviewed clinical studies and guidelines
+    - FDA Prescribing Information (Official Label)
+    - DailyMed (NIH) Drug Information
+    - Peer-reviewed clinical studies and guidelines (PubMed / PMC)
+    - ClinicalTrials.gov Registry
 
     **📅 Last Updated:** February 2026
     **📌 Version:** 1.0.0
@@ -949,4 +961,3 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
-
