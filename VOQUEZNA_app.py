@@ -31,6 +31,8 @@ st.markdown("""
     .stTabs [data-baseweb="tab-list"] { gap: 4px; flex-wrap: wrap !important; justify-content: center; }
     .stTabs [data-baseweb="tab"] { height: 48px; padding: 0 14px; background-color: #f1f5f9; border-radius: 8px; font-size: 1rem; white-space: nowrap; flex: 0 1 auto; margin: 2px; }
     .stTabs [aria-selected="true"] { background-color: #0057A8; color: white; }
+    .stTabs [data-baseweb="tab-highlight"] { display: none !important; }
+    .stTabs [data-baseweb="tab-border"] { display: none !important; }
     @media (max-width: 768px) {
         .block-container { padding-left: 0.5rem !important; padding-right: 0.5rem !important; }
         .main-header { font-size: 1.6rem; padding: 0.5rem 0; }
@@ -230,30 +232,30 @@ tabs = st.tabs([
 with tabs[0]:
     st.header("📖 Overview of VOQUEZNA (Vonoprazan)")
 
-    with st.expander("🎯 Indications & Available Strengths", expanded=True):
-        col1, col2 = st.columns(2)
-        with col1:
-            st.markdown("""
-            <div class="info-box">
-            <h4>👨‍⚕️ FDA-Approved Indications:</h4>
-            <ul>
-                <li><strong>Healing of Erosive Esophagitis (EE):</strong> Treatment of healing of all grades of erosive esophagitis in adults</li>
-                <li><strong>Maintenance of Healed EE:</strong> Maintenance of healing of all grades of erosive esophagitis and relief of heartburn associated with EE in adults</li>
-                <li><strong>H. pylori Infection:</strong> Treatment of <em>Helicobacter pylori</em> infection in adults (in combination with amoxicillin, or amoxicillin and clarithromycin/metronidazole)</li>
-            </ul>
-            </div>
-            """, unsafe_allow_html=True)
-        with col2:
-            st.markdown("""
-            <div class="card-item">
-                <h4>💊 10 mg — Tablet</h4>
-                <p class="card-detail">Maintenance dose for healed erosive esophagitis</p>
-            </div>
-            <div class="card-item">
-                <h4>💊 20 mg — Tablet</h4>
-                <p class="card-detail">Healing of EE and H. pylori eradication therapy</p>
-            </div>
-            """, unsafe_allow_html=True)
+    st.markdown("### 🎯 Indications & Available Strengths")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown("""
+        <div class="info-box">
+        <h4>👨‍⚕️ FDA-Approved Indications:</h4>
+        <ul>
+            <li><strong>Healing of Erosive Esophagitis (EE):</strong> Treatment of healing of all grades of erosive esophagitis in adults</li>
+            <li><strong>Maintenance of Healed EE:</strong> Maintenance of healing of all grades of erosive esophagitis and relief of heartburn associated with EE in adults</li>
+            <li><strong>H. pylori Infection:</strong> Treatment of <em>Helicobacter pylori</em> infection in adults (in combination with amoxicillin, or amoxicillin and clarithromycin/metronidazole)</li>
+        </ul>
+        </div>
+        """, unsafe_allow_html=True)
+    with col2:
+        st.markdown("""
+        <div class="card-item">
+            <h4>💊 10 mg — Tablet</h4>
+            <p class="card-detail">Maintenance dose for healed erosive esophagitis</p>
+        </div>
+        <div class="card-item">
+            <h4>💊 20 mg — Tablet</h4>
+            <p class="card-detail">Healing of EE and H. pylori eradication therapy</p>
+        </div>
+        """, unsafe_allow_html=True)
 
     with st.expander("🏆 Key Clinical Points"):
         st.markdown("""
@@ -290,13 +292,13 @@ with tabs[0]:
 with tabs[1]:
     st.header("⚗️ Mechanism of Action")
 
-    with st.expander("🔬 P-CAB Overview", expanded=True):
-        st.markdown("""
-        <div class="info-box">
-        <h3 style="color: #0057A8;">🔬 Potassium-Competitive Acid Blocker (P-CAB)</h3>
-        <p>Vonoprazan is a novel potassium-competitive acid blocker that inhibits gastric acid secretion by blocking the H⁺/K⁺-ATPase (proton pump) in a potassium-competitive manner. Unlike traditional PPIs, vonoprazan does not require acid activation, providing faster onset and more consistent acid suppression regardless of CYP2C19 genetic status.</p>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("### 🔬 P-CAB Overview")
+    st.markdown("""
+    <div class="info-box">
+    <h3 style="color: #0057A8;">🔬 Potassium-Competitive Acid Blocker (P-CAB)</h3>
+    <p>Vonoprazan is a novel potassium-competitive acid blocker that inhibits gastric acid secretion by blocking the H⁺/K⁺-ATPase (proton pump) in a potassium-competitive manner. Unlike traditional PPIs, vonoprazan does not require acid activation, providing faster onset and more consistent acid suppression regardless of CYP2C19 genetic status.</p>
+    </div>
+    """, unsafe_allow_html=True)
 
     with st.expander("⚙️ Detailed Mechanism"):
         col1, col2 = st.columns(2)
@@ -341,36 +343,36 @@ with tabs[1]:
 with tabs[2]:
     st.header("💊 Dosage and Administration")
 
-    with st.expander("👨‍⚕️ Important Notes & Standard Dosing", expanded=True):
-        st.markdown("""
-        <div class="warning-box">
-        <h3>⚠️ Important Administration Notes</h3>
-        <p style="font-size: 1.1rem; font-weight: bold;">
-        Vonoprazan can be taken with or without food. No food timing requirement unlike traditional PPIs.
-        </p>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("### 👨‍⚕️ Important Notes & Standard Dosing")
+    st.markdown("""
+    <div class="warning-box">
+    <h3>⚠️ Important Administration Notes</h3>
+    <p style="font-size: 1.1rem; font-weight: bold;">
+    Vonoprazan can be taken with or without food. No food timing requirement unlike traditional PPIs.
+    </p>
+    </div>
+    """, unsafe_allow_html=True)
 
-        st.markdown("""
-        <div class="card-item">
-            <h4>1️⃣ Healing of Erosive Esophagitis</h4>
-            <p class="card-detail"><strong>Dose:</strong> 20 mg once daily</p>
-            <p class="card-detail"><strong>Duration:</strong> 8 weeks</p>
-            <p class="card-detail"><strong>Note:</strong> For all grades of erosive esophagitis in adults</p>
-        </div>
-        <div class="card-item">
-            <h4>2️⃣ Maintenance of Healed Erosive Esophagitis</h4>
-            <p class="card-detail"><strong>Dose:</strong> 10 mg once daily</p>
-            <p class="card-detail"><strong>Duration:</strong> Continuously for up to 6 months</p>
-            <p class="card-detail"><strong>Note:</strong> For maintenance of healing and relief of heartburn associated with EE</p>
-        </div>
-        <div class="card-item">
-            <h4>3️⃣ H. pylori Eradication</h4>
-            <p class="card-detail"><strong>Dose:</strong> 20 mg twice daily for 14 days</p>
-            <p class="card-detail"><strong>Schedule:</strong> As part of Triple or Dual therapy with antibiotics</p>
-            <p class="card-detail"><strong>Note:</strong> In combination with amoxicillin ± clarithromycin/metronidazole</p>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("""
+    <div class="card-item">
+        <h4>1️⃣ Healing of Erosive Esophagitis</h4>
+        <p class="card-detail"><strong>Dose:</strong> 20 mg once daily</p>
+        <p class="card-detail"><strong>Duration:</strong> 8 weeks</p>
+        <p class="card-detail"><strong>Note:</strong> For all grades of erosive esophagitis in adults</p>
+    </div>
+    <div class="card-item">
+        <h4>2️⃣ Maintenance of Healed Erosive Esophagitis</h4>
+        <p class="card-detail"><strong>Dose:</strong> 10 mg once daily</p>
+        <p class="card-detail"><strong>Duration:</strong> Continuously for up to 6 months</p>
+        <p class="card-detail"><strong>Note:</strong> For maintenance of healing and relief of heartburn associated with EE</p>
+    </div>
+    <div class="card-item">
+        <h4>3️⃣ H. pylori Eradication</h4>
+        <p class="card-detail"><strong>Dose:</strong> 20 mg twice daily for 14 days</p>
+        <p class="card-detail"><strong>Schedule:</strong> As part of Triple or Dual therapy with antibiotics</p>
+        <p class="card-detail"><strong>Note:</strong> In combination with amoxicillin ± clarithromycin/metronidazole</p>
+    </div>
+    """, unsafe_allow_html=True)
 
     with st.expander("📉 Dose Adjustments"):
         col1, col2 = st.columns(2)
@@ -419,29 +421,29 @@ with tabs[2]:
 with tabs[3]:
     st.header("⚖️ Pharmacokinetics")
 
-    with st.expander("📊 Pharmacokinetic Parameters Summary", expanded=True):
-        st.markdown("""
-        <div class="card-item">
-            <h4>📊 Bioavailability</h4>
-            <p class="card-detail"><strong>Value:</strong> >70%</p>
-            <p class="card-detail">💡 Unaffected by food intake</p>
-        </div>
-        <div class="card-item">
-            <h4>⏱️ Tmax</h4>
-            <p class="card-detail"><strong>Value:</strong> 2-3 hours</p>
-            <p class="card-detail">💡 Delayed compared to PPIs, but provides longer duration of action</p>
-        </div>
-        <div class="card-item">
-            <h4>⌛ Half-life</h4>
-            <p class="card-detail"><strong>Value:</strong> ~7.7 hours</p>
-            <p class="card-detail">💡 Significant advantage over PPIs (~1-2 hours) — longer acid suppression</p>
-        </div>
-        <div class="card-item">
-            <h4>🔗 Protein Binding</h4>
-            <p class="card-detail"><strong>Value:</strong> ~85%</p>
-            <p class="card-detail">💡 Moderate protein binding</p>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("### 📊 Pharmacokinetic Parameters Summary")
+    st.markdown("""
+    <div class="card-item">
+        <h4>📊 Bioavailability</h4>
+        <p class="card-detail"><strong>Value:</strong> >70%</p>
+        <p class="card-detail">💡 Unaffected by food intake</p>
+    </div>
+    <div class="card-item">
+        <h4>⏱️ Tmax</h4>
+        <p class="card-detail"><strong>Value:</strong> 2-3 hours</p>
+        <p class="card-detail">💡 Delayed compared to PPIs, but provides longer duration of action</p>
+    </div>
+    <div class="card-item">
+        <h4>⌛ Half-life</h4>
+        <p class="card-detail"><strong>Value:</strong> ~7.7 hours</p>
+        <p class="card-detail">💡 Significant advantage over PPIs (~1-2 hours) — longer acid suppression</p>
+    </div>
+    <div class="card-item">
+        <h4>🔗 Protein Binding</h4>
+        <p class="card-detail"><strong>Value:</strong> ~85%</p>
+        <p class="card-detail">💡 Moderate protein binding</p>
+    </div>
+    """, unsafe_allow_html=True)
 
     with st.expander("🧬 Distribution, Metabolism & Elimination"):
         col1, col2 = st.columns(2)
@@ -504,19 +506,19 @@ with tabs[3]:
 with tabs[4]:
     st.header("🚫 Contraindications and Warnings")
 
-    with st.expander("🚨 Absolute Contraindications", expanded=True):
-        st.markdown("""
-        <div class="card-item" style="border-left: 4px solid #dc2626;">
-            <h4>🚨 1. Hypersensitivity</h4>
-            <p class="card-detail"><strong>Risk:</strong> Known hypersensitivity to vonoprazan or any component of the formulation</p>
-            <p class="card-detail"><strong>Action:</strong> Do not use; discontinue immediately if hypersensitivity reaction occurs</p>
-        </div>
-        <div class="card-item" style="border-left: 4px solid #dc2626;">
-            <h4>🚨 2. Rilpivirine-Containing Products</h4>
-            <p class="card-detail"><strong>Risk:</strong> Significant reduction in rilpivirine plasma concentrations via gastric pH increase</p>
-            <p class="card-detail"><strong>Action:</strong> Contraindicated — may result in loss of virologic response and development of HIV resistance</p>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("### 🚨 Absolute Contraindications")
+    st.markdown("""
+    <div class="card-item" style="border-left: 4px solid #dc2626;">
+        <h4>🚨 1. Hypersensitivity</h4>
+        <p class="card-detail"><strong>Risk:</strong> Known hypersensitivity to vonoprazan or any component of the formulation</p>
+        <p class="card-detail"><strong>Action:</strong> Do not use; discontinue immediately if hypersensitivity reaction occurs</p>
+    </div>
+    <div class="card-item" style="border-left: 4px solid #dc2626;">
+        <h4>🚨 2. Rilpivirine-Containing Products</h4>
+        <p class="card-detail"><strong>Risk:</strong> Significant reduction in rilpivirine plasma concentrations via gastric pH increase</p>
+        <p class="card-detail"><strong>Action:</strong> Contraindicated — may result in loss of virologic response and development of HIV resistance</p>
+    </div>
+    """, unsafe_allow_html=True)
 
     with st.expander("⚠️ Warnings and Precautions"):
         col1, col2 = st.columns(2)
@@ -571,41 +573,41 @@ with tabs[4]:
 with tabs[5]:
     st.header("⚠️ Adverse Reactions (Side Effects)")
 
-    with st.expander("📊 Common Side Effects (≥2%)", expanded=True):
-        st.markdown("""
-        <div class="card-item">
-            <h4>🤢 Gastritis <span class="card-badge card-badge-yellow">3%</span></h4>
-            <p class="card-detail">💡 Monitor for worsening GI symptoms; usually self-limiting</p>
-        </div>
-        <div class="card-item">
-            <h4>💧 Diarrhea <span class="card-badge card-badge-yellow">2%</span></h4>
-            <p class="card-detail">💡 Evaluate for C. difficile if persistent; maintain hydration</p>
-        </div>
-        <div class="card-item">
-            <h4>🫁 Abdominal Distension <span class="card-badge card-badge-blue">2%</span></h4>
-            <p class="card-detail">💡 Usually mild and transient; assess dietary factors</p>
-        </div>
-        <div class="card-item">
-            <h4>😣 Abdominal Pain <span class="card-badge card-badge-blue">2%</span></h4>
-            <p class="card-detail">💡 Monitor; evaluate for other GI causes if persistent</p>
-        </div>
-        <div class="card-item">
-            <h4>🤮 Nausea <span class="card-badge card-badge-blue">2%</span></h4>
-            <p class="card-detail">💡 Usually transient; take with food if bothersome</p>
-        </div>
-        <div class="card-item">
-            <h4>😖 Dyspepsia <span class="card-badge card-badge-blue">2%</span></h4>
-            <p class="card-detail">💡 Paradoxical in acid-suppressive therapy; usually resolves</p>
-        </div>
-        <div class="card-item">
-            <h4>🩸 Hypertension <span class="card-badge card-badge-yellow">2%</span></h4>
-            <p class="card-detail">💡 Monitor blood pressure regularly during treatment</p>
-        </div>
-        <div class="card-item">
-            <h4>🦠 Urinary Tract Infection <span class="card-badge card-badge-blue">2%</span></h4>
-            <p class="card-detail">💡 Standard management; not necessarily drug-related</p>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("### 📊 Common Side Effects (≥2%)")
+    st.markdown("""
+    <div class="card-item">
+        <h4>🤢 Gastritis <span class="card-badge card-badge-yellow">3%</span></h4>
+        <p class="card-detail">💡 Monitor for worsening GI symptoms; usually self-limiting</p>
+    </div>
+    <div class="card-item">
+        <h4>💧 Diarrhea <span class="card-badge card-badge-yellow">2%</span></h4>
+        <p class="card-detail">💡 Evaluate for C. difficile if persistent; maintain hydration</p>
+    </div>
+    <div class="card-item">
+        <h4>🫁 Abdominal Distension <span class="card-badge card-badge-blue">2%</span></h4>
+        <p class="card-detail">💡 Usually mild and transient; assess dietary factors</p>
+    </div>
+    <div class="card-item">
+        <h4>😣 Abdominal Pain <span class="card-badge card-badge-blue">2%</span></h4>
+        <p class="card-detail">💡 Monitor; evaluate for other GI causes if persistent</p>
+    </div>
+    <div class="card-item">
+        <h4>🤮 Nausea <span class="card-badge card-badge-blue">2%</span></h4>
+        <p class="card-detail">💡 Usually transient; take with food if bothersome</p>
+    </div>
+    <div class="card-item">
+        <h4>😖 Dyspepsia <span class="card-badge card-badge-blue">2%</span></h4>
+        <p class="card-detail">💡 Paradoxical in acid-suppressive therapy; usually resolves</p>
+    </div>
+    <div class="card-item">
+        <h4>🩸 Hypertension <span class="card-badge card-badge-yellow">2%</span></h4>
+        <p class="card-detail">💡 Monitor blood pressure regularly during treatment</p>
+    </div>
+    <div class="card-item">
+        <h4>🦠 Urinary Tract Infection <span class="card-badge card-badge-blue">2%</span></h4>
+        <p class="card-detail">💡 Standard management; not necessarily drug-related</p>
+    </div>
+    """, unsafe_allow_html=True)
 
     with st.expander("🔴 Serious Reactions & Long-term Concerns"):
         col1, col2 = st.columns(2)
@@ -661,21 +663,21 @@ with tabs[5]:
 with tabs[6]:
     st.header("💊⚖️ Drug Interactions")
 
-    with st.expander("🔴 Contraindicated & Avoid Combinations", expanded=True):
-        st.markdown("""
-        <div class="card-item" style="border-left: 4px solid #dc2626;">
-            <h4>🚫 Rilpivirine (Edurant, in Complera/Odefsey/Juluca) <span class="card-badge card-badge-red">CONTRAINDICATED</span></h4>
-            <p class="card-detail"><strong>Mechanism:</strong> pH-dependent absorption — elevated gastric pH drastically reduces rilpivirine absorption</p>
-            <p class="card-detail"><strong>Consequence:</strong> Loss of virologic response and potential development of HIV resistance</p>
-            <p class="card-detail" style="color: #64748b; font-size: 0.85rem;">Source: FDA Label Section 7 — Triple Verified ✅</p>
-        </div>
-        <div class="card-item" style="border-left: 4px solid #f59e0b;">
-            <h4>⚠️ CYP3A4 Inducers (e.g., Rifampin) <span class="card-badge card-badge-red">AVOID</span></h4>
-            <p class="card-detail"><strong>Mechanism:</strong> Induces metabolism of vonoprazan → decreased vonoprazan efficacy</p>
-            <p class="card-detail"><strong>Consequence:</strong> Reduced acid suppression and potential treatment failure</p>
-            <p class="card-detail" style="color: #64748b; font-size: 0.85rem;">Source: FDA Label Section 7</p>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("### 🔴 Contraindicated & Avoid Combinations")
+    st.markdown("""
+    <div class="card-item" style="border-left: 4px solid #dc2626;">
+        <h4>🚫 Rilpivirine (Edurant, in Complera/Odefsey/Juluca) <span class="card-badge card-badge-red">CONTRAINDICATED</span></h4>
+        <p class="card-detail"><strong>Mechanism:</strong> pH-dependent absorption — elevated gastric pH drastically reduces rilpivirine absorption</p>
+        <p class="card-detail"><strong>Consequence:</strong> Loss of virologic response and potential development of HIV resistance</p>
+        <p class="card-detail" style="color: #64748b; font-size: 0.85rem;">Source: FDA Label Section 7 — Triple Verified ✅</p>
+    </div>
+    <div class="card-item" style="border-left: 4px solid #f59e0b;">
+        <h4>⚠️ CYP3A4 Inducers (e.g., Rifampin) <span class="card-badge card-badge-red">AVOID</span></h4>
+        <p class="card-detail"><strong>Mechanism:</strong> Induces metabolism of vonoprazan → decreased vonoprazan efficacy</p>
+        <p class="card-detail"><strong>Consequence:</strong> Reduced acid suppression and potential treatment failure</p>
+        <p class="card-detail" style="color: #64748b; font-size: 0.85rem;">Source: FDA Label Section 7</p>
+    </div>
+    """, unsafe_allow_html=True)
 
     with st.expander("🟡 Monitor Closely"):
         st.markdown("""
@@ -747,39 +749,39 @@ with tabs[6]:
 with tabs[7]:
     st.header("📊 Comparison with Similar Drugs")
 
-    with st.expander("🔬 Vonoprazan vs. Proton Pump Inhibitors (PPIs)", expanded=True):
-        st.markdown("""
-        <div class="card-item" style="border-left: 4px solid #2563eb; border: 2px solid #2563eb;">
-            <h4>🏆 VOQUEZNA (Vonoprazan)</h4>
-            <p class="card-detail"><strong>Class:</strong> Potassium-Competitive Acid Blocker (P-CAB)</p>
-            <p class="card-detail"><strong>Use:</strong> Erosive esophagitis, maintenance of healed EE, H. pylori eradication</p>
-            <p class="card-detail"><strong>Mechanism:</strong> Potassium-competitive H⁺/K⁺-ATPase inhibition (no acid activation needed)</p>
-            <p class="card-detail"><strong>Half-life:</strong> ~7.7 hours</p>
-            <p class="card-detail"><strong>Food:</strong> No food effect — take anytime</p>
-            <p class="card-detail"><strong>Efficacy:</strong> <span class="card-badge card-badge-green">Fast onset (Day 1) + Consistent across CYP2C19 phenotypes</span></p>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("### 🔬 Vonoprazan vs. Proton Pump Inhibitors (PPIs)")
+    st.markdown("""
+    <div class="card-item" style="border-left: 4px solid #2563eb; border: 2px solid #2563eb;">
+        <h4>🏆 VOQUEZNA (Vonoprazan)</h4>
+        <p class="card-detail"><strong>Class:</strong> Potassium-Competitive Acid Blocker (P-CAB)</p>
+        <p class="card-detail"><strong>Use:</strong> Erosive esophagitis, maintenance of healed EE, H. pylori eradication</p>
+        <p class="card-detail"><strong>Mechanism:</strong> Potassium-competitive H⁺/K⁺-ATPase inhibition (no acid activation needed)</p>
+        <p class="card-detail"><strong>Half-life:</strong> ~7.7 hours</p>
+        <p class="card-detail"><strong>Food:</strong> No food effect — take anytime</p>
+        <p class="card-detail"><strong>Efficacy:</strong> <span class="card-badge card-badge-green">Fast onset (Day 1) + Consistent across CYP2C19 phenotypes</span></p>
+    </div>
+    """, unsafe_allow_html=True)
 
-        st.markdown("""
-        <div class="card-item">
-            <h4>💊 Omeprazole (PPI)</h4>
-            <p class="card-detail"><strong>Class:</strong> Proton Pump Inhibitor</p>
-            <p class="card-detail"><strong>Use:</strong> GERD, erosive esophagitis, H. pylori, Zollinger-Ellison</p>
-            <p class="card-detail"><strong>Mechanism:</strong> Irreversible H⁺/K⁺-ATPase inhibition (requires acid activation)</p>
-            <p class="card-detail"><strong>Half-life:</strong> 0.5-1.0 hours</p>
-            <p class="card-detail"><strong>Food:</strong> Must take 30-60 minutes before meals</p>
-            <p class="card-detail"><strong>Efficacy:</strong> Slow onset (requires days); variable by CYP2C19 status</p>
-        </div>
-        <div class="card-item">
-            <h4>💊 Esomeprazole (Nexium — PPI)</h4>
-            <p class="card-detail"><strong>Class:</strong> Proton Pump Inhibitor (S-isomer of Omeprazole)</p>
-            <p class="card-detail"><strong>Use:</strong> GERD, erosive esophagitis, H. pylori</p>
-            <p class="card-detail"><strong>Mechanism:</strong> Irreversible H⁺/K⁺-ATPase inhibition (requires acid activation)</p>
-            <p class="card-detail"><strong>Half-life:</strong> 1.0-1.5 hours</p>
-            <p class="card-detail"><strong>Food:</strong> Take before meals for optimal effect</p>
-            <p class="card-detail"><strong>Efficacy:</strong> Slightly more consistent than omeprazole; still CYP2C19-dependent</p>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("""
+    <div class="card-item">
+        <h4>💊 Omeprazole (PPI)</h4>
+        <p class="card-detail"><strong>Class:</strong> Proton Pump Inhibitor</p>
+        <p class="card-detail"><strong>Use:</strong> GERD, erosive esophagitis, H. pylori, Zollinger-Ellison</p>
+        <p class="card-detail"><strong>Mechanism:</strong> Irreversible H⁺/K⁺-ATPase inhibition (requires acid activation)</p>
+        <p class="card-detail"><strong>Half-life:</strong> 0.5-1.0 hours</p>
+        <p class="card-detail"><strong>Food:</strong> Must take 30-60 minutes before meals</p>
+        <p class="card-detail"><strong>Efficacy:</strong> Slow onset (requires days); variable by CYP2C19 status</p>
+    </div>
+    <div class="card-item">
+        <h4>💊 Esomeprazole (Nexium — PPI)</h4>
+        <p class="card-detail"><strong>Class:</strong> Proton Pump Inhibitor (S-isomer of Omeprazole)</p>
+        <p class="card-detail"><strong>Use:</strong> GERD, erosive esophagitis, H. pylori</p>
+        <p class="card-detail"><strong>Mechanism:</strong> Irreversible H⁺/K⁺-ATPase inhibition (requires acid activation)</p>
+        <p class="card-detail"><strong>Half-life:</strong> 1.0-1.5 hours</p>
+        <p class="card-detail"><strong>Food:</strong> Take before meals for optimal effect</p>
+        <p class="card-detail"><strong>Efficacy:</strong> Slightly more consistent than omeprazole; still CYP2C19-dependent</p>
+    </div>
+    """, unsafe_allow_html=True)
 
     with st.expander("🏆 When to Choose & Key Differentiators"):
         col1, col2 = st.columns(2)
@@ -887,16 +889,16 @@ with tabs[8]:
 with tabs[9]:
     st.header("🏢 Phathom Pharmaceuticals — Manufacturer Profile")
 
-    with st.expander("🏛️ Corporate Overview", expanded=True):
-        st.markdown("""
-        <div class="info-box">
-        <p class="card-detail">🏢 <strong>Company Name:</strong> Phathom Pharmaceuticals, Inc.</p>
-        <p class="card-detail">📍 <strong>Headquarters:</strong> Florham Park, New Jersey (USA)</p>
-        <p class="card-detail">📜 <strong>History:</strong> Founded in 2019, specifically established (backed by Takeda and Frazier Healthcare Partners) to acquire exclusive rights to develop and commercialize vonoprazan in the US, Europe, and Canada.</p>
-        <p class="card-detail">🌍 <strong>Global Standing:</strong> NASDAQ: PHAT — Biopharmaceutical company focused exclusively on innovative treatments for gastrointestinal diseases and disorders.</p>
-        <p class="card-detail">🎯 <strong>Core Therapeutic Areas:</strong> Acid-related gastrointestinal diseases — Erosive Esophagitis, Non-Erosive GERD, H. pylori Eradication.</p>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("### 🏛️ Corporate Overview")
+    st.markdown("""
+    <div class="info-box">
+    <p class="card-detail">🏢 <strong>Company Name:</strong> Phathom Pharmaceuticals, Inc.</p>
+    <p class="card-detail">📍 <strong>Headquarters:</strong> Florham Park, New Jersey (USA)</p>
+    <p class="card-detail">📜 <strong>History:</strong> Founded in 2019, specifically established (backed by Takeda and Frazier Healthcare Partners) to acquire exclusive rights to develop and commercialize vonoprazan in the US, Europe, and Canada.</p>
+    <p class="card-detail">🌍 <strong>Global Standing:</strong> NASDAQ: PHAT — Biopharmaceutical company focused exclusively on innovative treatments for gastrointestinal diseases and disorders.</p>
+    <p class="card-detail">🎯 <strong>Core Therapeutic Areas:</strong> Acid-related gastrointestinal diseases — Erosive Esophagitis, Non-Erosive GERD, H. pylori Eradication.</p>
+    </div>
+    """, unsafe_allow_html=True)
 
     with st.expander("❤️ Leadership & Quick Facts"):
         st.markdown("""
@@ -947,3 +949,4 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
